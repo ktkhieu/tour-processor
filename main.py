@@ -926,7 +926,8 @@ def save():
 
 if __name__ == '__main__':
     print("🚀 Starting Multi-User Tour Request Processor")
-    print("📍 Open your browser to: http://localhost:5000")
-    print("💡 Users can connect their own Google Sheets!")
+    print("📍 Users can connect their own Google Sheets!")
     
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Use environment PORT for Heroku deployment
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=False, host='0.0.0.0', port=port)
